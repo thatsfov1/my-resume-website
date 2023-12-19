@@ -9,7 +9,7 @@ import Plane from "../models/Plane";
 const Home = () => {
 
     const [isRotating, setIsRotating] = useState(false);
-    const [currentStage, setCurrentStage] = useState();
+    const [currentStage, setCurrentStage] = useState(1);
     const adjustIslandForScreenSize = () =>{
         let screenScale = null
         let screenPosition = [0, -6.5, -43]
@@ -50,7 +50,7 @@ const Home = () => {
                     <directionalLight position={[1,1,1]} intensity={2}/>
                     <ambientLight intensity={0.5}/>
                     <hemisphereLight skyColor='#b1e1ff' groundColor='#000' intensity={1}/>
-                    <Sky/>
+                    <Sky isRotating={isRotating}/>
                     <Bird/>
                     <Plane
                         position={planePosition}
